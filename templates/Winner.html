@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('static',filename='logobrowser.png')}}">
+</head>
+<style>
+    @font-face {
+
+        font-family: "winnerfont"; /* Choose a name for your font */
+
+        src: url("static/impact/impact.ttf"); /* Path to your .ttf file */
+
+        }
+    body{
+        font-family: "winnerfont", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        background-image: url("static/bgimage.png");
+        background-size: cover;
+    }
+    *:focus{
+        outline: none;
+    }
+</style>
+<body>
+    <div class="home-container w-full h-[100vh] flex flex-col items-center justify-center" >
+        <div class="bg-[#000000] bg-opacity-70 px-[5rem] mx-[5rem] mt-[1rem] py-[1rem] rounded-md">
+            
+        
+            <p class="text-[2rem] text-[#EEE2DE]">{{winner}}</p>
+         
+        </div>
+    </div>
+    
+</body>
+</html>

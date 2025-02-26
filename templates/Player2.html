@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('static',filename='logobrowser.png')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></head>
+<style>
+     @font-face {
+
+        font-family: "winnerfont"; /* Choose a name for your font */
+
+        src: url("static/impact/impact.ttf"); /* Path to your .ttf file */
+
+        }
+    body{
+        font-family: "IBM Plex Mono", serif;
+        font-weight: 300;
+        font-style: normal;
+        background-image: url("static/bgimage.png");
+        background-size: cover;
+    }
+    #question{
+        font-family: "winnerfont", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+    }
+    *:focus{
+        outline: none;
+    }
+</style>
+<body>
+   
+     <div class="home-container w-full flex flex-col items-center justify-center" >
+         <div class="bg-[#000000] bg-opacity-70 px-[5rem] mt-[1rem] py-[1rem]">
+            <div class="home-container w-full flex items-center justify-center" >
+                <p id="question" class="text-[2rem] text-[#EEE2DE]">Question: {{question}}</p>
+            </div>
+        <div class="w-[35rem] h-[35.5rem] rounded-md ">
+            <!-- <img class="w-[35rem] h-[35rem]" src="https://fal.media/files/penguin/a7_SExdI7g13hkjzkU6oM_cc1dbb714c32424f9979b2ae98592284.jpg" alt=""> -->
+            {% if reply %} 
+                <img class="w-[35rem] h-[35rem]" src="{{reply}}" alt="">
+            {% endif %}
+        </div>
+         <form action="/player2" method="post" class="flex flex-col mt-[1rem] items-center justify-center"> 
+            <div class="flex">
+                <textarea type="text" name="player2inpt" id="player2inpt" placeholder="Prompt Here" class="border-2 border-[#3a3a3a] w-[24.5rem] h-[4rem] p-[1rem] rounded-md bg-[#000000] text-white"></textarea>
+                <button type="submit" class="font-bold p-[1rem] bg-[#3b82f6] w-[8rem] ml-[1rem] rounded-md text-[#EEE2DE]">Generate</button>
+            </div>
+             <button type="submit" value="finalsubmit" name="FinalSubmit" class="font-bold p-[1rem] bg-[#ef4444] w-[35rem] mt-[1rem] rounded-md text-[#EEE2DE]">SUBMIT!!</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const inputElement = document.getElementById('player2inpt');
+    inputElement.addEventListener('input', function() {
+    this.style.height = 'auto'; // Reset height to auto
+    this.style.height = this.scrollHeight + 'px'; // Set height based on content
+    });
+
+</script>
+</html>

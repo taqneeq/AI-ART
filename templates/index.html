@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="{{ url_for('static',filename='logobrowser.png')}}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    @font-face {
+
+        font-family: "winnerfont"; /* Choose a name for your font */
+
+        src: url("static/impact/impact.ttf"); /* Path to your .ttf file */
+
+        }
+    body{
+        font-family: "winnerfont", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        background-image: url("static/bgimage.png");
+        background-size: cover;
+    }
+    *:focus{
+        outline: none;
+    }
+</style>
+<body>
+    <div class="home-container w-full h-[100vh] flex items-center justify-center" >
+        <a href="/player1" target="_blank">
+            <button class="bg-[#000000] hover:bg-opacity-70 px-[5rem] ml-[1rem] py-[5rem] rounded-md text-[2rem] text-[#EEE2DE]"> Player 1</button>
+        </a>
+        <a href="/player2" target="_blank">
+            <button class="bg-[#000000] hover:bg-opacity-70 px-[5rem] ml-[1rem] py-[5rem] rounded-md text-[2rem] text-[#EEE2DE]"> Player 2</button>
+        </a>
+    </div>
+    
+</body>
+</html>
